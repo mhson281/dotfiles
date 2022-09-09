@@ -1,4 +1,3 @@
--- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.leader = "space"
@@ -52,7 +51,6 @@ opt.showmode = false
 vim.o.background = 'dark'
 opt.mouse = 'a'
 vim.opt.listchars:append "space:⋅"
-vim.opt.listchars:append "eol:↴"
 
 require("indent_blankline").setup {
   space_char_blankline = " ",
@@ -61,7 +59,7 @@ require("indent_blankline").setup {
 }
 
 vim.g.catppuccin_flavour = "frappe"
-local colors = require("catppuccin.palettes").get_palette() -- fetch colors from g:catppuccin_flavour palette
+local colors = require("catppuccin.palettes").get_palette()
 require("catppuccin").setup {
   custom_highlights = {
     Comment = { fg = colors.flamingo },
@@ -69,19 +67,6 @@ require("catppuccin").setup {
     TSConstant = { fg = colors.sky },
     TSComment = { fg = colors.surface2, style = { "italic" } }
   },
-  color_override = {
-    all = {
-      text = "#ffffff",
-    },
-    latte = {
-      base = "#ff0000",
-      mantle = "#242424",
-      crust = "#474747",
-    },
-    frappe = {},
-    macchiato = {},
-    mocha = {},
-  }
 }
 
 lvim.builtin.treesitter.ensure_installed = {
@@ -104,7 +89,6 @@ lvim.builtin.treesitter.highlight.enabled = true
 lvim.plugins = {
   { "lunarvim/colorschemes" },
   { "folke/tokyonight.nvim" },
-  { "EdenEast/nightfox.nvim" },
   { "mfussenegger/nvim-jdtls" },
   { "rmehri01/onenord.nvim" },
   { "luisiacc/gruvbox-baby" },
