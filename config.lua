@@ -1,4 +1,3 @@
-lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.leader = "space"
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
@@ -19,7 +18,7 @@ opt.splitright            = true
 opt.smarttab              = true
 opt.expandtab             = true
 opt.smartindent           = true
-opt.autoindent            = true
+opt.cindent               = true
 vim.opt_global.laststatus = 3
 opt.termguicolors         = true
 
@@ -31,8 +30,8 @@ opt.pumheight       = 10
 opt.updatetime      = 300
 opt.timeoutlen      = 500
 opt.conceallevel    = 0
-opt.tabstop         = 2
-opt.shiftwidth      = 2
+opt.tabstop         = 4
+opt.shiftwidth      = 4
 opt.cmdheight       = 1
 opt.number          = true
 opt.relativenumber  = true
@@ -53,45 +52,43 @@ opt.mouse = 'a'
 vim.opt.listchars:append "space:⋅"
 
 require("indent_blankline").setup {
-  space_char_blankline = " ",
-  show_current_context = true,
-  show_current_context_start = true,
+    space_char_blankline = " ",
+    show_current_context = true,
+    show_current_context_start = true,
 }
 
 vim.g.catppuccin_flavour = "frappe"
 local colors = require("catppuccin.palettes").get_palette()
 require("catppuccin").setup {
-  custom_highlights = {
-    Comment = { fg = colors.flamingo },
-    TSConstBuiltin = { fg = colors.peach, style = {} },
-    TSConstant = { fg = colors.sky },
-    TSComment = { fg = colors.surface2, style = { "italic" } }
-  },
+    custom_highlights = {
+        Comment = { fg = colors.flamingo },
+        TSConstBuiltin = { fg = colors.peach, style = {} },
+        TSConstant = { fg = colors.sky },
+        TSComment = { fg = colors.surface2, style = { "italic" } }
+    },
 }
 
 lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "css",
-  "rust",
-  "java",
-  "yaml",
-  "go",
+    "bash",
+    "c",
+    "javascript",
+    "json",
+    "lua",
+    "python",
+    "typescript",
+    "css",
+    "rust",
+    "java",
+    "yaml",
+    "go",
 }
 
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 lvim.plugins = {
-  { "lunarvim/colorschemes" },
-  { "folke/tokyonight.nvim" },
-  { "mfussenegger/nvim-jdtls" },
-  { "rmehri01/onenord.nvim" },
-  { "luisiacc/gruvbox-baby" },
-  { "catppuccin/nvim" },
-  { "lukas-reineke/indent-blankline.nvim" },
+    { "lunarvim/colorschemes" },
+    { "mfussenegger/nvim-jdtls" },
+    { "rmehri01/onenord.nvim" },
+    { "luisiacc/gruvbox-baby" },
+    { "catppuccin/nvim" },
 }
