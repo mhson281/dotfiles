@@ -14,6 +14,7 @@ zstyle ':omz:update' frequency 13
 export EDITOR='lvim'
 alias ex="exercism"
 alias vim="lvim"
+alias look="history | fzf"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -21,10 +22,14 @@ source $ZSH/oh-my-zsh.sh
 source ~/.oh-my-zsh/custom/themes/powerlevel10k/powerlevel10k.zsh-theme
 source /Users/minhs/.oh-my-zsh/custom/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source /Users/minhs/.oh-my-zsh/custom/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.oh-my-zsh/plugins/z/z.plugin.zsh
 
 set ZSH_THEME="powerlevel10k"
 plugins=(
   zsh-autosuggestions
   git
   zsh-syntax-highlighting
+  zsh-z
  )
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
