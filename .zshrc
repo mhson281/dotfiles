@@ -1,4 +1,4 @@
-#config as of 21 Augustg 2022
+## Config as of November 26 2022
 
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
@@ -11,9 +11,9 @@ zstyle ':omz:update' frequency 13
 # changing default color scheme for dir/files
 
 # Alias and plugins
-export EDITOR='lvim'
+export EDITOR='nvim'
 alias ex="exercism"
-alias vim="lvim"
+alias vim="nvim"
 alias look="history | fzf"
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
@@ -33,3 +33,5 @@ plugins=(
  )
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+eval "$(mcfly init zsh)"
+
