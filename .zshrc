@@ -35,5 +35,4 @@ plugins=(
  )
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-eval "$(mcfly init zsh)"
 
