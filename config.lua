@@ -1,93 +1,33 @@
-lvim.leader = "space"
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.builtin.alpha.active = true
-lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
-lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.setup.view.side = "left"
-lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
-lvim.colorscheme = "catppuccin"
+-- Vim Settings
+vim.opt.cmdheight = 2 -- more space in the neovim command line for displaying messages
+vim.opt.guifont = "monospace:h17" -- the font used in graphical neovim applications
+vim.opt.shiftwidth = 2 -- the number of spaces inserted for each indentation
+vim.opt.tabstop = 2 -- insert 2 spaces for a tab
+vim.opt.relativenumber = true -- relative line numbers
+vim.opt.wrap = true -- wrap lines
+vim.opt.smarttab = true
+
+--LVim Settings
 lvim.transparent_window = true
+lvim.colorscheme = "neogruvbox"
 
-local opt                 = vim.opt
-opt.syntax                = 'enable'
-opt.hidden                = true
-opt.splitbelow            = true
-opt.splitright            = true
-opt.smarttab              = true
-opt.expandtab             = true
-opt.smartindent           = true
-opt.cindent               = true
-vim.opt_global.laststatus = 3
-opt.termguicolors         = true
-
-opt.backup = false
-opt.writebackup = false
-opt.wrap = false
-
-opt.pumheight       = 10
-opt.updatetime      = 300
-opt.timeoutlen      = 500
-opt.conceallevel    = 0
-opt.tabstop         = 4
-opt.shiftwidth      = 4
-opt.cmdheight       = 1
-opt.number          = true
-opt.relativenumber  = true
-vim.opt.smartindent = true
-opt.ignorecase      = true
-opt.smartcase       = true
-opt.cursorline      = true
-opt.title           = true
-opt.hlsearch        = false
-
-vim.api.nvim_set_option("clipboard", "unnamed")
-vim.opt.list = true
-opt.ruler = false
-opt.showcmd = false
-opt.showmode = false
-vim.o.background = 'dark'
-opt.mouse = 'a'
-vim.opt.listchars:append "space:⋅"
-
-require("indent_blankline").setup {
-    space_char_blankline = " ",
-    show_current_context = true,
-    show_current_context_start = true,
-}
-
-vim.g.catppuccin_flavour = "frappe"
-local colors = require("catppuccin.palettes").get_palette()
-require("catppuccin").setup {
-    custom_highlights = {
-        Comment = { fg = colors.flamingo },
-        TSConstBuiltin = { fg = colors.peach, style = {} },
-        TSConstant = { fg = colors.sky },
-        TSComment = { fg = colors.surface2, style = { "italic" } }
+--Catppuccin setup
+require("catppuccin").setup({
+  flavour = "mocha", --latte,frappe,macchiato,mocha
+  background = {
+       light = "latte",
+       dark = "mocha",
+  },
+  transparent_background = false,
+  integrations = {
+        cmp = true,
+        nvimtree = true,
+        telescope = true,
     },
-}
+})
 
-lvim.builtin.treesitter.ensure_installed = {
-    "bash",
-    "c",
-    "javascript",
-    "json",
-    "lua",
-    "python",
-    "typescript",
-    "css",
-    "rust",
-    "java",
-    "yaml",
-    "go",
-}
-
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enabled = true
+--Install plugins
 lvim.plugins = {
-    { "lunarvim/colorschemes" },
-    { "mfussenegger/nvim-jdtls" },
-    { "rmehri01/onenord.nvim" },
-    { "luisiacc/gruvbox-baby" },
     { "catppuccin/nvim" },
+    { "Almo7aya/neogruvbox.nvim" }
 }
