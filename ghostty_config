@@ -1,0 +1,34 @@
+font-family = "Jetbrains Mono Nerd Font"
+font-size = 12
+background-opacity = 0.8
+
+adjust-underline-position = 40%
+adjust-underline-thickness = -60%
+
+cursor-style = block
+cursor-style-blink = true
+
+keybind = ctrl+t=new_tab
+keybind = ctrl+h=previous_tab
+keybind = ctrl+l=next_tab
+keybind = ctrl+w=close_window
+keybind = shift+ctrl+r=reload_config
+keybind = shift+ctrl+t=toggle_window_decorations
+
+window-width = 120
+window-height = 45
+window-padding-x = 2
+window-padding-y = 2
+window-decoration = false
+window-theme = dark
+
+confirm-close-surface = false
+clipboard-paste-protection = false
+unfocused-split-opacity = 0.85
+
+theme = "GruvboxDark"
+background = #1C1C1C
+cursor-color = #FF6367
+minimum-contrast = 3.3
+
+palette = 4=#D2B48C
